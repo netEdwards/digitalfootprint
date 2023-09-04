@@ -1,95 +1,37 @@
 import Image from 'next/image'
-import styles from './page.module.css'
+import styles from './styles.module.css'
+import Link from 'next/link'
+import {FloatingDiv} from './components/floatingdiv/floatingdiv'
+import { oxygen } from './fonts'
+import React from 'react'
+import App from 'next/app'
 
 export default function Home() {
+
+  ReactDOM.render(<FloatingDiv/>, App)
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className={`${styles.main} ${oxygen.variable}`}>
+      
+      <nav className={styles.nav1}>
+        <div className={styles.home1}>
+          <Link href="/" className={`${styles.link2} ${styles.navdecor}`}>HOME</Link>
         </div>
+        <div className={styles.one} >
+          <Link href="/editorial" className={`${styles.link1} ${styles.navdecor}`}>EDITORIAL</Link>
+          <Link href="/mythos" className={`${styles.link1} ${styles.navdecor}`}>MYTHOS</Link>
+          <Link href="/projects" className={`${styles.link1} ${styles.navdecor}`}>PROJECTS</Link>
+          <Link href="/social" className={`${styles.link1} ${styles.navdecor}`}>SOCIAL</Link>
+        </div>
+
+      </nav>
+
+      <div className={styles.fdContainer}>
+        <FloatingDiv/>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
   )
 }
+// --IDEAS FROM LAST SESH--
+//   ~Components on the homepage, your writing raw code rn so...Home
+//   ~Maybe start with a floating div, introducing the page for now. I am getting anxy sitting here idk why so i am stopping but rn I really wanna keep going but I cannt....a
